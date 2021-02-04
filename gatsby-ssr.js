@@ -15,11 +15,7 @@ void function() {
   } catch (err) { }
 
   function setTheme(newTheme) {
-    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
-      document.body.classList.replace(preferredTheme, newTheme)
-    } else {
-      document.body.classList.add(newTheme)
-    }
+    document.body.setAttribute('data-theme', newTheme);
 
     window.__theme = newTheme
     preferredTheme = newTheme
